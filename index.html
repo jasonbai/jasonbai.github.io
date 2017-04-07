@@ -235,6 +235,148 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/30/droolsetup/" itemprop="url">
+                  本地Drools Workbench环境搭建及安装配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-30T10:33:58+08:00" content="2017-03-30">
+              2017-03-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/30/droolsetup/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/30/droolsetup/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>上周出差，发现不少互联网公司开始采用Drools平台来搭建风控决策引擎，计划在本机环境测试搭建Java平台开源决策引擎Drools，并进行系列的文章来跟踪记录整个学习过程。</p>
+<h4 id="Drools介绍"><a href="#Drools介绍" class="headerlink" title="Drools介绍"></a>Drools介绍</h4><p>Drools（JBoss Rules ）具有一个易于访问企业策略、易于调整以及易于管理的开源业务规则引擎，符合业内标准，速度快、效率高。业务分析师或审核人员可以利用它轻松查看业务规则，从而检验是否已编码的规则执行了所需的业务规则。</p>
+<blockquote>
+<p>官方网站：<a href="http://www.drools.org/" target="_blank" rel="external">http://www.drools.org/</a></p>
+</blockquote>
+<h3 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h3><p>我的本机系统环境 MacOS 10.11.6，本机运行Drools Workbench需要有Tomcat和MySQL，个人电脑没有配置，需要从头搭建环境。</p>
+<h4 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h4><p>安装Tomcat，<a href="http://www.jb51.net/article/94201.htm" target="_blank" rel="external">参考文章</a></p>
+<blockquote>
+<ol>
+<li>启动服务：打开终端，<code> cd /Users/apple/Library/Tomcat/bin </code></li>
+<li>再输入： <code>./startup.sh </code></li>
+<li>网址输入  <code> <a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></code></li>
+<li>关闭服务：终端输入： <code>./shutdown.sh</code></li>
+</ol>
+</blockquote>
+<h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><ol>
+<li><p>官网下载mysql安装包mysql-5.7.13-osx10.11-x86_64.bmg安装</p>
+</li>
+<li><p>安装完成后终端输入：</p>
+</li>
+</ol>
+<p><code>mysql –version</code><br>—-显示版本号说明正常，若显示command not found，在终端输入如下，”/usr/local/mysql/bin/mysql”为mysql默认安装路径：</p>
+<p><code><br>$ cd /usr/local/bin/</code></p>
+<p>$ sudo ln -fs /usr/local/mysql/bin/mysql mysql<br></p>
+<ol>
+<li>关闭mysql服务：</li>
+</ol>
+<p><code>sudo /usr/local/mysql/support-files/mysql.server stop </code></p>
+<ol>
+<li>配置root账号的密码，默认没有配置，</li>
+</ol>
+<p>—–在终端内输入（开启安全模式启动mysql）：</p>
+<p><code> sudo /usr/local/mysql/bin/mysqld_safe –skip-grant-tables</code></p>
+<p>—–修改密码，终端输入（逐行输入，必须，“<em>**</em>“为设置的密码）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql -u root</div><div class="line">UPDATE mysql.user SET authentication_string=PASSWORD(&apos;*****&apos;) WHERE User=&apos;root&apos;;</div><div class="line">FLUSH PRIVILEGES;</div><div class="line">\q</div></pre></td></tr></table></figure>
+<ol>
+<li>配置完成后验证，在终端输入：</li>
+</ol>
+<p><code>mysql -u root -p</code><br>—-提示输入密码，进入mysql说明成功！<br><code><br>mysql&gt;<br></code></p>
+<ol>
+<li>mysql服务启动和关闭可以在系统偏好设置里面操作，终端命令如下：<br><code><br>$ sudo /usr/local/mysql/support-files/mysql.server start<br>$ sudo /usr/local/mysql/support-files/mysql.server stop<br></code></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/15/udacitydand/" itemprop="url">
                   优达开始-《纳米数据分析师》笔记
                 </a>
@@ -737,6 +879,9 @@
           
             <h3 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h3><ul>
 <li>ggplot 分面处理 (<a href="http://www.cookbook-r.com/Graphs/Facets_(ggplot2" target="_blank" rel="external">http://www.cookbook-r.com/Graphs/Facets_(ggplot2</a>))</li>
+</ul>
+<h3 id="BOOK"><a href="#BOOK" class="headerlink" title="BOOK"></a>BOOK</h3><ul>
+<li><a href="http://r4ds.had.co.nz/introduction.html" target="_blank" rel="external">R for Data Science</a></li>
 </ul>
 <h3 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h3><ul>
 <li><a href="http://www.cookbook-r.com/" target="_blank" rel="external">http://www.cookbook-r.com/</a></li>
@@ -1286,7 +1431,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1296,7 +1441,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

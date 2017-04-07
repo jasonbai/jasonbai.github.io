@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="notebook," />
+  <meta name="keywords" content="教程 Drools," />
 
 
 
@@ -84,40 +84,19 @@
 
 
 
-<meta name="description" content="知识要点
-ggplot 分面处理 (http://www.cookbook-r.com/Graphs/Facets_(ggplot2))
-
-BOOK
-R for Data Science
-
-常用网站
-http://www.cookbook-r.com/
-http://docs.ggplot2.org/current/index.html">
+<meta name="description" content="概述上周出差，发现不少互联网公司开始采用Drools平台来搭建风控决策引擎，计划在本机环境测试搭建Java平台开源决策引擎Drools，并进行系列的文章来跟踪记录整个学习过程。
+Drools介绍Drools（JBoss Rules ）具有一个易于访问企业策略、易于调整以及易于管理的开源业务规则引擎，符合业内标准，速度快、效率高。业务分析师或审核人员可以利用它轻松查看业务规则，从而检验是否已编码的规">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R'Learn_notebook">
-<meta property="og:url" content="http://yoursite.com/2016/12/08/Rlearn/index.html">
+<meta property="og:title" content="本地Drools Workbench环境搭建及安装配置">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/droolsetup/index.html">
 <meta property="og:site_name" content="日拱一卒">
-<meta property="og:description" content="知识要点
-ggplot 分面处理 (http://www.cookbook-r.com/Graphs/Facets_(ggplot2))
-
-BOOK
-R for Data Science
-
-常用网站
-http://www.cookbook-r.com/
-http://docs.ggplot2.org/current/index.html">
-<meta property="og:updated_time" content="2017-02-20T12:49:33.000Z">
+<meta property="og:description" content="概述上周出差，发现不少互联网公司开始采用Drools平台来搭建风控决策引擎，计划在本机环境测试搭建Java平台开源决策引擎Drools，并进行系列的文章来跟踪记录整个学习过程。
+Drools介绍Drools（JBoss Rules ）具有一个易于访问企业策略、易于调整以及易于管理的开源业务规则引擎，符合业内标准，速度快、效率高。业务分析师或审核人员可以利用它轻松查看业务规则，从而检验是否已编码的规">
+<meta property="og:updated_time" content="2017-04-07T13:15:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R'Learn_notebook">
-<meta name="twitter:description" content="知识要点
-ggplot 分面处理 (http://www.cookbook-r.com/Graphs/Facets_(ggplot2))
-
-BOOK
-R for Data Science
-
-常用网站
-http://www.cookbook-r.com/
-http://docs.ggplot2.org/current/index.html">
+<meta name="twitter:title" content="本地Drools Workbench环境搭建及安装配置">
+<meta name="twitter:description" content="概述上周出差，发现不少互联网公司开始采用Drools平台来搭建风控决策引擎，计划在本机环境测试搭建Java平台开源决策引擎Drools，并进行系列的文章来跟踪记录整个学习过程。
+Drools介绍Drools（JBoss Rules ）具有一个易于访问企业策略、易于调整以及易于管理的开源业务规则引擎，符合业内标准，速度快、效率高。业务分析师或审核人员可以利用它轻松查看业务规则，从而检验是否已编码的规">
 
 
 
@@ -138,9 +117,9 @@ http://docs.ggplot2.org/current/index.html">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/08/Rlearn/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/30/droolsetup/"/>
 
-  <title> R'Learn_notebook | 日拱一卒 </title>
+  <title> 本地Drools Workbench环境搭建及安装配置 | 日拱一卒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +239,7 @@ http://docs.ggplot2.org/current/index.html">
             
             
               
-                R'Learn_notebook
+                本地Drools Workbench环境搭建及安装配置
               
             
           </h1>
@@ -272,8 +251,8 @@ http://docs.ggplot2.org/current/index.html">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-08T22:59:16+08:00" content="2016-12-08">
-              2016-12-08
+            <time itemprop="dateCreated" datetime="2017-03-30T10:33:58+08:00" content="2017-03-30">
+              2017-03-30
             </time>
           </span>
 
@@ -283,8 +262,8 @@ http://docs.ggplot2.org/current/index.html">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/08/Rlearn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/08/Rlearn/" itemprop="commentsCount"></span>
+                <a href="/2017/03/30/droolsetup/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/30/droolsetup/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,16 +286,48 @@ http://docs.ggplot2.org/current/index.html">
       
 
       
-        <h3 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h3><ul>
-<li>ggplot 分面处理 (<a href="http://www.cookbook-r.com/Graphs/Facets_(ggplot2" target="_blank" rel="external">http://www.cookbook-r.com/Graphs/Facets_(ggplot2</a>))</li>
-</ul>
-<h3 id="BOOK"><a href="#BOOK" class="headerlink" title="BOOK"></a>BOOK</h3><ul>
-<li><a href="http://r4ds.had.co.nz/introduction.html" target="_blank" rel="external">R for Data Science</a></li>
-</ul>
-<h3 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h3><ul>
-<li><a href="http://www.cookbook-r.com/" target="_blank" rel="external">http://www.cookbook-r.com/</a></li>
-<li><a href="http://docs.ggplot2.org/current/index.html" target="_blank" rel="external">http://docs.ggplot2.org/current/index.html</a></li>
-</ul>
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>上周出差，发现不少互联网公司开始采用Drools平台来搭建风控决策引擎，计划在本机环境测试搭建Java平台开源决策引擎Drools，并进行系列的文章来跟踪记录整个学习过程。</p>
+<h4 id="Drools介绍"><a href="#Drools介绍" class="headerlink" title="Drools介绍"></a>Drools介绍</h4><p>Drools（JBoss Rules ）具有一个易于访问企业策略、易于调整以及易于管理的开源业务规则引擎，符合业内标准，速度快、效率高。业务分析师或审核人员可以利用它轻松查看业务规则，从而检验是否已编码的规则执行了所需的业务规则。</p>
+<blockquote>
+<p>官方网站：<a href="http://www.drools.org/" target="_blank" rel="external">http://www.drools.org/</a></p>
+</blockquote>
+<h3 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h3><p>我的本机系统环境 MacOS 10.11.6，本机运行Drools Workbench需要有Tomcat和MySQL，个人电脑没有配置，需要从头搭建环境。</p>
+<h4 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h4><p>安装Tomcat，<a href="http://www.jb51.net/article/94201.htm" target="_blank" rel="external">参考文章</a></p>
+<blockquote>
+<ol>
+<li>启动服务：打开终端，<code> cd /Users/apple/Library/Tomcat/bin </code></li>
+<li>再输入： <code>./startup.sh </code></li>
+<li>网址输入  <code> <a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a></code></li>
+<li>关闭服务：终端输入： <code>./shutdown.sh</code></li>
+</ol>
+</blockquote>
+<h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><ol>
+<li><p>官网下载mysql安装包mysql-5.7.13-osx10.11-x86_64.bmg安装</p>
+</li>
+<li><p>安装完成后终端输入：</p>
+</li>
+</ol>
+<p><code>mysql –version</code><br>—-显示版本号说明正常，若显示command not found，在终端输入如下，”/usr/local/mysql/bin/mysql”为mysql默认安装路径：</p>
+<p><code><br>$ cd /usr/local/bin/</code></p>
+<p>$ sudo ln -fs /usr/local/mysql/bin/mysql mysql<br></p>
+<ol>
+<li>关闭mysql服务：</li>
+</ol>
+<p><code>sudo /usr/local/mysql/support-files/mysql.server stop </code></p>
+<ol>
+<li>配置root账号的密码，默认没有配置，</li>
+</ol>
+<p>—–在终端内输入（开启安全模式启动mysql）：</p>
+<p><code> sudo /usr/local/mysql/bin/mysqld_safe –skip-grant-tables</code></p>
+<p>—–修改密码，终端输入（逐行输入，必须，“<em>**</em>“为设置的密码）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql -u root</div><div class="line">UPDATE mysql.user SET authentication_string=PASSWORD(&apos;*****&apos;) WHERE User=&apos;root&apos;;</div><div class="line">FLUSH PRIVILEGES;</div><div class="line">\q</div></pre></td></tr></table></figure>
+<ol>
+<li>配置完成后验证，在终端输入：</li>
+</ol>
+<p><code>mysql -u root -p</code><br>—-提示输入密码，进入mysql说明成功！<br><code><br>mysql&gt;<br></code></p>
+<ol>
+<li>mysql服务启动和关闭可以在系统偏好设置里面操作，终端命令如下：<br><code><br>$ sudo /usr/local/mysql/support-files/mysql.server start<br>$ sudo /usr/local/mysql/support-files/mysql.server stop<br></code></li>
+</ol>
 
       
     </div>
@@ -339,7 +350,7 @@ http://docs.ggplot2.org/current/index.html">
       
         <div class="post-tags">
           
-            <a href="/tags/notebook/" rel="tag">#notebook</a>
+            <a href="/tags/教程-Drools/" rel="tag">#教程 Drools</a>
           
         </div>
       
@@ -348,17 +359,13 @@ http://docs.ggplot2.org/current/index.html">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/27/add-github-repository/" rel="next" title="快速拉取Github的Repository到本地">
-                <i class="fa fa-chevron-left"></i> 快速拉取Github的Repository到本地
+              <a href="/2017/02/15/udacitydand/" rel="next" title="优达开始-《纳米数据分析师》笔记">
+                <i class="fa fa-chevron-left"></i> 优达开始-《纳米数据分析师》笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/21/2017newplan/" rel="prev" title="2017Plan">
-                2017Plan <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -384,8 +391,8 @@ http://docs.ggplot2.org/current/index.html">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/08/Rlearn/"
-           data-title="R'Learn_notebook" data-url="http://yoursite.com/2016/12/08/Rlearn/">
+      <div class="ds-thread" data-thread-key="2017/03/30/droolsetup/"
+           data-title="本地Drools Workbench环境搭建及安装配置" data-url="http://yoursite.com/2017/03/30/droolsetup/">
       </div>
     
   </div>
@@ -507,7 +514,7 @@ http://docs.ggplot2.org/current/index.html">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#知识要点"><span class="nav-number">1.</span> <span class="nav-text">知识要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOOK"><span class="nav-number">2.</span> <span class="nav-text">BOOK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用网站"><span class="nav-number">3.</span> <span class="nav-text">常用网站</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Drools介绍"><span class="nav-number">1.1.</span> <span class="nav-text">Drools介绍</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境设置"><span class="nav-number">2.</span> <span class="nav-text">环境设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Tomcat"><span class="nav-number">2.1.</span> <span class="nav-text">安装Tomcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装MySQL"><span class="nav-number">2.2.</span> <span class="nav-text">安装MySQL</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
