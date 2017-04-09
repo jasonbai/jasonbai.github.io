@@ -235,6 +235,126 @@
             
               
                 
+                <a class="post-title-link" href="/2017/04/07/20170407MathJax/" itemprop="url">
+                  Markdown使用MathJax引擎插入数据公式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-07T21:17:33+08:00" content="2017-04-07">
+              2017-04-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/07/20170407MathJax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/07/20170407MathJax/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h3 id="一、目标："><a href="#一、目标：" class="headerlink" title="一、目标："></a>一、目标：</h3><p>想在博客里写一些数学公式，网上搜罗一番材料，最终选择使用MathJax引擎。</p>
+<blockquote>
+<p>MathJax是一个JavaScript引擎，用来显示网络上的数学公式。它可以工作于所有流行的浏览器上。</p>
+</blockquote>
+<h3 id="二、步骤："><a href="#二、步骤：" class="headerlink" title="二、步骤："></a>二、步骤：</h3><h4 id="2-1-在Markdown编辑器里添加一下代码，调用MathJax引擎。"><a href="#2-1-在Markdown编辑器里添加一下代码，调用MathJax引擎。" class="headerlink" title="2.1 在Markdown编辑器里添加一下代码，调用MathJax引擎。"></a>2.1 在Markdown编辑器里添加一下代码，调用MathJax引擎。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-2-代码说明"><a href="#2-2-代码说明" class="headerlink" title="2.2 代码说明"></a>2.2 代码说明</h4><p>使用Tex写公式。<code>$$公式$$</code>表示行间公式，本来Tex中使用<code>\(公式\)</code>表示行内公式，但因为Markdown中<code>\</code>是转义字符，所以在Markdown中输入行内公式使用<code>\\(公式\\)</code>，如下代码：</p>
+<p><code><br>$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$<br>\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)<br></code></p>
+<p>行间显示<br>$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</p>
+<p>行内显示<br>\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</p>
+<h3 id="三、资料来源："><a href="#三、资料来源：" class="headerlink" title="三、资料来源："></a>三、资料来源：</h3><ol>
+<li><a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="external">Markdown中插入数学公式的方法</a></li>
+<li><a href="http://mathjax-chinese-doc.readthedocs.io/en/latest/index.html" target="_blank" rel="external">MathJax 中文文档</a></li>
+<li><a href="http://www.cnblogs.com/GarfieldEr007/p/5577727.html" target="_blank" rel="external">LATEX数学公式基本语法</a></li>
+<li><a href="http://www.360doc.com/content/14/0930/23/9482_413578190.shtml" target="_blank" rel="external">MathJax使用LaTeX语法编写数学公式教程</a></li>
+</ol>
+<h3 id="四、-小工具："><a href="#四、-小工具：" class="headerlink" title="四、 小工具："></a>四、 小工具：</h3><ol>
+<li><a href="http://www.codecogs.com/latex/eqneditor.php" target="_blank" rel="external">在线LATEX公式编辑器</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/30/droolsetup/" itemprop="url">
                   本地Drools Workbench环境搭建及安装配置
                 </a>
@@ -1272,127 +1392,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/12/new-life/" itemprop="url">
-                  资源收集
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-12T14:19:52+08:00" content="2016-07-12">
-              2016-07-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/12/new-life/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/12/new-life/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="在线书本"><a href="#在线书本" class="headerlink" title="在线书本"></a>在线书本</h3><ul>
-<li><a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git</a></li>
-<li><a href="https://zh.wikipedia.org/zh-cn/Markdown" target="_blank" rel="external">Markdown</a></li>
-<li><a href="http://www.catb.org/esr/faqs/smart-questions.html" target="_blank" rel="external">How To Ask Questions The Smart Way</a></li>
-</ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>本站建设依照<a href="http://xiaolai.li/2016/06/22/makecs-build-a-blog-with-hexo-on-github/" target="_blank" rel="external">“使用 Hexo 为自己在 Github 上建一个静态 Blog 站点”</a> 搭建完成</li>
-<li><a href="http://d2wy8f7a9ursnm.cloudfront.net/atom-editor-cheat-sheet.pdf" target="_blank" rel="external">Atom Editor Cheat Sheet</a></li>
-<li><a href="https://github.com/nicolashery/mac-dev-setup" target="_blank" rel="external">Mac OS X Dev Setup</a></li>
-<li><a href="https://github.com/0nn0/terminal-mac-cheatsheet/tree/master/中文请参考" target="_blank" rel="external">Terminal Cheatsheet for Mac</a></li>
-<li><a href="http://www.w3schools.com/html/default.asp" target="_blank" rel="external">HTML教程</a></li>
-<li><a href="http://www.w3schools.com/html/default.asp" target="_blank" rel="external">CSS教程</a></li>
-<li><a href="http://www.jianshu.com/p/899a2d4de88f" target="_blank" rel="external">终端上使用GitHub分享</a></li>
-<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">Github简明教程</a></li>
-<li><a href="https://github.com/xirong/my-git/blob/master/how-to-use-github.md" target="_blank" rel="external">Github大全</a></li>
-<li><a href="http://learnpythonthehardway.org/book/index.html" target="_blank" rel="external"> Learn Python the Hard Way</a></li>
-<li><a href="https://github.com/justjavac/free-programming-books-zh_CN/blob/master/README.md" target="_blank" rel="external">免费的编程中文书籍索引</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1431,7 +1437,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1441,7 +1447,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
