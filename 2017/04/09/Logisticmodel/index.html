@@ -102,7 +102,7 @@
   但是有些情况下，被预测变量可能是二元变量
 
 即成功或失败、流">
-<meta property="og:updated_time" content="2017-04-09T13:35:20.000Z">
+<meta property="og:updated_time" content="2017-04-09T14:29:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用R语言解读逻辑回归">
 <meta name="twitter:description" content="一、为什么用逻辑回归模型？  先谈线性回归，是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。其表达形式为y = w’x+e，e为误差服从均值为0的正态分布。
@@ -328,8 +328,8 @@
 <h3 id="四、逻辑回归的数学解释"><a href="#四、逻辑回归的数学解释" class="headerlink" title="四、逻辑回归的数学解释"></a>四、逻辑回归的数学解释</h3><p>Logistic回归主要通过构造一个重要的指标：发生比来判定因变量的类别。在这里我们引入概率的概念，把事件发生定义为Y=1，事件未发生定义为Y=0，那么事件发生的概率为p,事件未发生的概率为1-p，把p看成x的线性函数；</p>
 <p>回归中，最常用的估计是最小二乘估计，因为使得p在[0,1]之间变换，最小二乘估计不太合适，有木有一种估计法能让p在趋近与0和1的时候变换缓慢一些（不敏感），这种变换是我们想要的，于是引入Logit变换,对p/(1-p)也就是发生与不发生的比值取对数，也称对数差异比。经过变换后，p对x就不是线性关系了。</p>
 <p>logistic回归的公式可以表示为：</p>
-<p>$$p=\frac{ exp(\ beta <em>{0}+\beta </em>{1}x<em>{1}+…..+\ beta</em>{p}x _{p})}{2a}$$</p>
-<p>(p=\frac{exp(\beta <em>{0}+\beta </em>{1}x<em>{1}+…..+\beta</em>{p}x <em>{p})}{1+exp(\beta </em>{0}+\beta <em>{1}x </em>{1}+…..+\beta <em>{p}x </em>{p})})</p>
+<p>$$p=\frac{exp(\beta <em>{0}+\beta </em>{1}x<em>{1}+…..+\beta</em>{p}x <em>{p})}{1+exp(\beta </em>{0}+\beta <em>{1}x </em>{1}+…..+\beta <em>{p}x </em>{p})}$$</p>
+<p>$$\beta<em>{0}+\beta</em>{1}x<em>{1}+…..+\beta</em>{p}x _{p}$$</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
 <li><a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95" target="_blank" rel="external">最小二乘估计法</a></li>
 </ol>
