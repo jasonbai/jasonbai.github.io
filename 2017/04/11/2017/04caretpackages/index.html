@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="packages,R," />
 
 
 
@@ -84,12 +84,34 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="日拱一卒">
-<meta property="og:url" content="http://yoursite.com/tags/笔记/index.html">
+<meta name="description" content="一、背景介绍
+作者：Max Kuhn
+GitHub托管:地址
+cran:地址
+说明文档
+
+二、数据划分一般做模型验证，需要在原始数据集上划分出训练集与测试数集，caret包提供了解决方案。123inTrain &amp;lt;- createDataPartition(y=spam$type,p=0.75,list=FALSE)training &amp;lt;- spam[inTrain, ]testing &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="caret包解读">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/2017/04caretpackages/index.html">
 <meta property="og:site_name" content="日拱一卒">
+<meta property="og:description" content="一、背景介绍
+作者：Max Kuhn
+GitHub托管:地址
+cran:地址
+说明文档
+
+二、数据划分一般做模型验证，需要在原始数据集上划分出训练集与测试数集，caret包提供了解决方案。123inTrain &amp;lt;- createDataPartition(y=spam$type,p=0.75,list=FALSE)training &amp;lt;- spam[inTrain, ]testing &amp;">
+<meta property="og:updated_time" content="2017-04-11T14:02:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日拱一卒">
+<meta name="twitter:title" content="caret包解读">
+<meta name="twitter:description" content="一、背景介绍
+作者：Max Kuhn
+GitHub托管:地址
+cran:地址
+说明文档
+
+二、数据划分一般做模型验证，需要在原始数据集上划分出训练集与测试数集，caret包提供了解决方案。123inTrain &amp;lt;- createDataPartition(y=spam$type,p=0.75,list=FALSE)training &amp;lt;- spam[inTrain, ]testing &amp;">
 
 
 
@@ -110,9 +132,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/11/2017/04caretpackages/"/>
 
-  <title> 标签: 笔记 | 日拱一卒 </title>
+  <title> caret包解读 | 日拱一卒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,7 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,74 +233,135 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        笔记
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/15/2017/udacitydand/" itemprop="url">
-              
-                <span itemprop="name">优达开始-《纳米数据分析师》笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-15T16:09:43+08:00"
-              content="2017-02-15" >
-          02-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/07/2017/intro-to-computer-science--note/" itemprop="url">
-              
-                <span itemprop="name">计算机科学导论完结笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-07T20:28:10+08:00"
-              content="2017-02-07" >
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                caret包解读
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-11T14:34:19+08:00" content="2017-04-11">
+              2017-04-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、背景介绍"><a href="#一、背景介绍" class="headerlink" title="一、背景介绍"></a>一、背景介绍</h3><ul>
+<li>作者：<a href="https://github.com/topepo" target="_blank" rel="external">Max Kuhn</a></li>
+<li>GitHub托管:<a href="https://github.com/topepo/caret" target="_blank" rel="external">地址</a></li>
+<li>cran:<a href="https://cran.r-project.org/web/packages/caret/" target="_blank" rel="external">地址</a></li>
+<li><a href="https://topepo.github.io/caret/" target="_blank" rel="external">说明文档</a></li>
+</ul>
+<h3 id="二、数据划分"><a href="#二、数据划分" class="headerlink" title="二、数据划分"></a>二、数据划分</h3><p>一般做模型验证，需要在原始数据集上划分出训练集与测试数集，caret包提供了解决方案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">inTrain &lt;- createDataPartition(y=spam$type,p=0.75,list=FALSE)</div><div class="line">training &lt;- spam[inTrain, ]</div><div class="line">testing &lt;- spam[-inTrain, ]</div></pre></td></tr></table></figure></p>
+<p>以上命令中createDataPartition( )就是数据划分函数，对象是spam$typ，p=0.75表示训练数据所占的比例为75%，list是输出结果的格式，默认list=FALSE。 training &lt;- spam[inTrain, ]，testing &lt;- spam[-inTrain, ]分别制定具体的训练数据和测试数据。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/packages/" rel="tag">#packages</a>
+          
+            <a href="/tags/R/" rel="tag">#R</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/09/2017/Logisticmodel/" rel="next" title="用R语言解读逻辑回归">
+                <i class="fa fa-chevron-left"></i> 用R语言解读逻辑回归
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/11/2017/DANDreport1/" rel="prev" title="优达-数据分析师阶段性汇报">
+                优达-数据分析师阶段性汇报 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -286,6 +369,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -305,8 +392,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -387,6 +483,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、背景介绍"><span class="nav-number">1.</span> <span class="nav-text">一、背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、数据划分"><span class="nav-number">2.</span> <span class="nav-text">二、数据划分</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -490,6 +597,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
