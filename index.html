@@ -235,6 +235,107 @@
             
               
                 
+                <a class="post-title-link" href="/2017/04/11/caretpackages/" itemprop="url">
+                  caret包解读
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-11T14:34:19+08:00" content="2017-04-11">
+              2017-04-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一、背景介绍"><a href="#一、背景介绍" class="headerlink" title="一、背景介绍"></a>一、背景介绍</h3><ul>
+<li>作者：<a href="https://github.com/topepo" target="_blank" rel="external">Max Kuhn</a></li>
+<li>GitHub托管:<a href="https://github.com/topepo/caret" target="_blank" rel="external">地址</a></li>
+<li>cran:<a href="https://cran.r-project.org/web/packages/caret/" target="_blank" rel="external">地址</a></li>
+<li><a href="https://topepo.github.io/caret/" target="_blank" rel="external">说明文档</a></li>
+</ul>
+<h3 id="二、数据划分"><a href="#二、数据划分" class="headerlink" title="二、数据划分"></a>二、数据划分</h3><p>一般做模型验证，需要在原始数据集上划分出训练集与测试数集，caret包提供了解决方案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">inTrain &lt;- createDataPartition(y=spam$type,p=0.75,list=FALSE)</div><div class="line">training &lt;- spam[inTrain, ]</div><div class="line">testing &lt;- spam[-inTrain, ]</div></pre></td></tr></table></figure></p>
+<p>以上命令中createDataPartition( )就是数据划分函数，对象是spam$typ，p=0.75表示训练数据所占的比例为75%，list是输出结果的格式，默认list=FALSE。 training &lt;- spam[inTrain, ]，testing &lt;- spam[-inTrain, ]分别制定具体的训练数据和测试数据。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/04/09/Logisticmodel/" itemprop="url">
                   用R语言解读逻辑回归
                 </a>
@@ -1213,113 +1314,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/23/addDomainName/" itemprop="url">
-                  绑定个人域名到Github Page（Hexo版）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-23T09:20:24+08:00" content="2016-07-23">
-              2016-07-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在依照<a href="http://xiaolai.li/2016/06/22/makecs-build-a-blog-with-hexo-on-github/" target="_blank" rel="external">“使用 Hexo 为自己在 Github 上建一个静态 Blog 站点”</a> 后，进一步优化站点。</p>
-<p>目前做了以下升级：</p>
-<blockquote>
-<ul>
-<li>通过修改theme的CSS，调整了部分样式</li>
-<li>绑定个人域名，替换Github提供的二级域名</li>
-</ul>
-</blockquote>
-<p>本文简单介绍一下绑定二级域名的过程。</p>
-<h4 id="注册个人域名，且修改CNAME指向"><a href="#注册个人域名，且修改CNAME指向" class="headerlink" title="注册个人域名，且修改CNAME指向"></a>注册个人域名，且修改CNAME指向</h4><p>在域名服务提供商注册域名后，修改记录类型CNAME,记录值为现有的Github的二级域名（例如我个人的jasonbai.github.io）</p>
-<h4 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h4><p>在~/source/ 文件下添加文件名为CNAME文件，文件内容添加个人域名地址（例如我个人的www.jasonbai.com）</p>
-<h4 id="上传CNAME"><a href="#上传CNAME" class="headerlink" title="上传CNAME"></a>上传CNAME</h4><p><code><br>hexo generate</code></p>
-<p><code><br>hexo deploy</code></p>
-<h4 id="搞定"><a href="#搞定" class="headerlink" title="搞定"></a>搞定</h4><p>测试一下看看</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1365,7 +1359,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1375,7 +1369,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

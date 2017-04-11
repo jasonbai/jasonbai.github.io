@@ -235,6 +235,113 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/23/addDomainName/" itemprop="url">
+                  绑定个人域名到Github Page（Hexo版）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-23T09:20:24+08:00" content="2016-07-23">
+              2016-07-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在依照<a href="http://xiaolai.li/2016/06/22/makecs-build-a-blog-with-hexo-on-github/" target="_blank" rel="external">“使用 Hexo 为自己在 Github 上建一个静态 Blog 站点”</a> 后，进一步优化站点。</p>
+<p>目前做了以下升级：</p>
+<blockquote>
+<ul>
+<li>通过修改theme的CSS，调整了部分样式</li>
+<li>绑定个人域名，替换Github提供的二级域名</li>
+</ul>
+</blockquote>
+<p>本文简单介绍一下绑定二级域名的过程。</p>
+<h4 id="注册个人域名，且修改CNAME指向"><a href="#注册个人域名，且修改CNAME指向" class="headerlink" title="注册个人域名，且修改CNAME指向"></a>注册个人域名，且修改CNAME指向</h4><p>在域名服务提供商注册域名后，修改记录类型CNAME,记录值为现有的Github的二级域名（例如我个人的jasonbai.github.io）</p>
+<h4 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h4><p>在~/source/ 文件下添加文件名为CNAME文件，文件内容添加个人域名地址（例如我个人的www.jasonbai.com）</p>
+<h4 id="上传CNAME"><a href="#上传CNAME" class="headerlink" title="上传CNAME"></a>上传CNAME</h4><p><code><br>hexo generate</code></p>
+<p><code><br>hexo deploy</code></p>
+<h4 id="搞定"><a href="#搞定" class="headerlink" title="搞定"></a>搞定</h4><p>测试一下看看</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/21/2016/tiddlywikilearn/" itemprop="url">
                   便携Wiki软件TiddlyWiki简明使用手册
                 </a>
@@ -505,7 +612,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -515,7 +622,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
