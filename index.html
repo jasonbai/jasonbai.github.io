@@ -256,6 +256,170 @@
             
               
                 
+                <a class="post-title-link" href="/2017/11/30/2017/Scorecard/" itemprop="url">
+                  信用风险及评分卡
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-30T22:01:30+08:00" content="2017-11-30">
+              2017-11-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是信用风险？"><a href="#什么是信用风险？" class="headerlink" title="什么是信用风险？"></a>什么是信用风险？</h2><hr>
+<p>交易对手未能履行约定契约中的义务而造成经济损失的风险,即受信人不能履行还本付息的责任而使授信人的预期收益与实际收益发生偏离的可能性它是金融风险的主要类型。</p>
+<h2 id="什么是评分卡？"><a href="#什么是评分卡？" class="headerlink" title="什么是评分卡？"></a>什么是评分卡？</h2><hr>
+<p> 信用评分模型运用数据挖掘技术和统计分析方法，通过对申请人的人口特征、信用历史记录、行为记录、交易记录等大量数据进行系统的分析，挖掘数据中蕴含的行为模式、信用特征，捕捉历史信息和未来信用表现之间的关系，发展出预测性的模型，以一个信用评分来综合评估消费者未来的某种信用表现。</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><blockquote>
+<ul>
+<li>以分数的形式来衡量风险几率的一种手段</li>
+<li>对未来一段时间内违约/逾期/失联概率的预测</li>
+<li>有一个明确的(正)区间</li>
+<li>通常分数越高越安全</li>
+<li>数据驱动（搜集数据，对数据研究，建立模型）</li>
+<li>客观性、准确性、效率性</li>
+</ul>
+</blockquote>
+<h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><blockquote>
+<ul>
+<li>金融机构内部数据评分：</li>
+</ul>
+<p>反欺诈评分卡、申请评分卡(Application)、行为评分卡(Behavior)、催收评分卡(Collection)、行为收益评分、行为流失倾向评分、申请欺诈评分、交易欺诈评分</p>
+<ul>
+<li>征信局数据评分:</li>
+</ul>
+<p>征信局风险/破产/收益评分、市场反应评分、转账倾向评分、信用评分</p>
+</blockquote>
+<h3 id="常用的评分卡："><a href="#常用的评分卡：" class="headerlink" title="常用的评分卡："></a>常用的评分卡：</h3><ol>
+<li>反欺诈评分卡、申请评分卡是在贷前准入环节里面</li>
+<li>申请评分卡用到的大部分是申请者的背景变量，而且这个模型一般也会比较谨慎。</li>
+<li>行为评分卡表示申请者已经获准贷款，已经放出贷款以后，根据贷款人的消费习惯，还款情况等一些信用特征，就是跟踪客户合同开始后的表现，来预估用户逾期或者是违约概率。</li>
+<li>催收评分卡是对已经逾期或者违约的客户，对他进行一个催收评分，严格来讲，有三个模型，还款率模型，账龄滚动模型，失联模型。</li>
+</ol>
+<h3 id="评分卡示例"><a href="#评分卡示例" class="headerlink" title="评分卡示例"></a>评分卡示例</h3><table>
+<thead>
+<tr>
+<th>variable变量</th>
+<th style="text-align:right">bin分箱</th>
+<th style="text-align:center">points分数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>age</td>
+<td style="text-align:right">&lt;=30</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>age</td>
+<td style="text-align:right">(30,35]</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">(35,40]</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">(40,45]</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">(45,50]</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="评分卡的表现期和观察期"><a href="#评分卡的表现期和观察期" class="headerlink" title="评分卡的表现期和观察期"></a>评分卡的表现期和观察期</h3><p>为了能够开发最合适的模型，需要准确的确定客户的风险释放规律，太短风险未充分释放，太长业务成本又太高。</p>
+<p>需要结合Vintage 分析、滚动率分析和风险释放分析。通过这些分析，可以确定模型所使用的好 坏客户定义、表现期和观察期。</p>
+<p>在确定了客户的好坏表现和观察期表现期后，需要针对已有放款数据的数据量、好客户 /坏客户数量制定抽样方案，提取并整合数据，并为数据打上好坏标签。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><hr>
+<p>[1]: 陈建. 信用评分模型技术与应用[M]. 中国财政经济出版社, 2005.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/07/02/2017/data-visualization/" itemprop="url">
                   数据可视化感悟
                 </a>
@@ -1283,110 +1447,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/21/2016/2017newplan/" itemprop="url">
-                  2017Plan
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-21T09:22:10+08:00" content="2016-12-21">
-              2016-12-21
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>花了一点时间，制定了<a href="https://github.com/jasonbai/2017plan" target="_blank" rel="external">2017Plan</a>。</p>
-<blockquote>
-<p> 搭建在Github上面，随时进行进度更新</p>
-</blockquote>
-<p>安排了不少事情，理论上单单一年时间应该是无法这些计划的。但是2016年对我来说，是一个全新的开始，经过2016年整整一年的时间摸索，找到一个方向为之努力，在2017年逐步按照计划积累。正如livid在<a href="https://livid.v2ex.com/essays/2012/01/24/a-letter-from-26-to-18/" target="_blank" rel="external">在 26 岁时写给 18 岁的自己</a>里写到的：</p>
-<blockquote>
-<p>让这个方向上所有的信息都尽可能多的汇聚到你的大脑中，你的记忆或者说潜意识就像一片大海一样当然是能够装下这一切的。然后，想象你从 20000 米的高空俯瞰大地，大地上是你日复一日所积累的信息，然后你将他们分类，合并，丢弃那些质量低劣的。你见得越多，你就越明白什么算是质量低劣的，也就必然丢得越多。</p>
-<p>积累某个方向上的信息量是你一辈子的工作的本质。</p>
-<p>你所积累的信息量，最终需要传递到别人那里去。当有越多的人需要你所积累的信息时，这个世界也就会自然给你越丰厚的回报。所以，你需要时不时的问问自己，自己现在在积累的这些信息，由这些信息所创造的现实存在，究竟能够帮助到多少人，又被多少人所必需。</p>
-</blockquote>
-<p>也许，我没有像livid那样在18岁的时候找的一个具体的方向，但30岁也不算太晚。依着这个<a href="https://github.com/jasonbai/2017plan" target="_blank" rel="external">计划</a> 点滴积累。希望能做出点事情来。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1432,7 +1492,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="统计学,R," />
+  <meta name="keywords" content="教程," />
 
 
 
@@ -86,36 +86,25 @@
 
 
 
-<meta name="description" content="一、为什么用逻辑回归模型？  先谈线性回归，是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。其表达形式为y = w’x+e，e为误差服从均值为0的正态分布。
-
-线性回归模型一般是对某一事物进行预测，例如预测房价、身高、GDP、学生成绩等，这些被预测的变量都属于连续型变量。
-
-  但是有些情况下，被预测变量可能是二元变量
-
-即成功或失败、流">
+<meta name="description" content="什么是信用风险？
+交易对手未能履行约定契约中的义务而造成经济损失的风险,即受信人不能履行还本付息的责任而使授信人的预期收益与实际收益发生偏离的可能性它是金融风险的主要类型。
+什么是评分卡？
+ 信用评分模型运用数据挖掘技术和统计分析方法，通过对申请人的人口特征、信用历史记录、行为记录、交易记录等大量数据进行系统的分析，挖掘数据中蕴含的行为模式、信用特征，捕捉历史信息和未来信用表现之间的关系，发展出预">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用R语言解读逻辑回归">
-<meta property="og:url" content="http://yoursite.com/2017/04/09/2017/Logisticmodel/index.html">
+<meta property="og:title" content="信用风险及评分卡">
+<meta property="og:url" content="http://yoursite.com/2017/11/30/2017/Scorecard/index.html">
 <meta property="og:site_name" content="日拱一卒">
-<meta property="og:description" content="一、为什么用逻辑回归模型？  先谈线性回归，是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。其表达形式为y = w’x+e，e为误差服从均值为0的正态分布。
-
-线性回归模型一般是对某一事物进行预测，例如预测房价、身高、GDP、学生成绩等，这些被预测的变量都属于连续型变量。
-
-  但是有些情况下，被预测变量可能是二元变量
-
-即成功或失败、流">
-<meta property="og:image" content="http://oo6m6ar35.bkt.clouddn.com/CodeCogsEqn.gif">
-<meta property="og:updated_time" content="2017-04-10T07:03:05.000Z">
+<meta property="og:description" content="什么是信用风险？
+交易对手未能履行约定契约中的义务而造成经济损失的风险,即受信人不能履行还本付息的责任而使授信人的预期收益与实际收益发生偏离的可能性它是金融风险的主要类型。
+什么是评分卡？
+ 信用评分模型运用数据挖掘技术和统计分析方法，通过对申请人的人口特征、信用历史记录、行为记录、交易记录等大量数据进行系统的分析，挖掘数据中蕴含的行为模式、信用特征，捕捉历史信息和未来信用表现之间的关系，发展出预">
+<meta property="og:updated_time" content="2017-11-30T15:20:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用R语言解读逻辑回归">
-<meta name="twitter:description" content="一、为什么用逻辑回归模型？  先谈线性回归，是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。其表达形式为y = w’x+e，e为误差服从均值为0的正态分布。
-
-线性回归模型一般是对某一事物进行预测，例如预测房价、身高、GDP、学生成绩等，这些被预测的变量都属于连续型变量。
-
-  但是有些情况下，被预测变量可能是二元变量
-
-即成功或失败、流">
-<meta name="twitter:image" content="http://oo6m6ar35.bkt.clouddn.com/CodeCogsEqn.gif">
+<meta name="twitter:title" content="信用风险及评分卡">
+<meta name="twitter:description" content="什么是信用风险？
+交易对手未能履行约定契约中的义务而造成经济损失的风险,即受信人不能履行还本付息的责任而使授信人的预期收益与实际收益发生偏离的可能性它是金融风险的主要类型。
+什么是评分卡？
+ 信用评分模型运用数据挖掘技术和统计分析方法，通过对申请人的人口特征、信用历史记录、行为记录、交易记录等大量数据进行系统的分析，挖掘数据中蕴含的行为模式、信用特征，捕捉历史信息和未来信用表现之间的关系，发展出预">
 
 
 
@@ -136,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/09/2017/Logisticmodel/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/30/2017/Scorecard/"/>
 
-  <title> 用R语言解读逻辑回归 | 日拱一卒 </title>
+  <title> 信用风险及评分卡 | 日拱一卒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +266,7 @@
             
             
               
-                用R语言解读逻辑回归
+                信用风险及评分卡
               
             
           </h1>
@@ -289,8 +278,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-09T19:45:22+08:00" content="2017-04-09">
-              2017-04-09
+            <time itemprop="dateCreated" datetime="2017-11-30T22:01:30+08:00" content="2017-11-30">
+              2017-11-30
             </time>
           </span>
 
@@ -317,44 +306,77 @@
       
 
       
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<h3 id="一、为什么用逻辑回归模型？"><a href="#一、为什么用逻辑回归模型？" class="headerlink" title="一、为什么用逻辑回归模型？"></a>一、为什么用逻辑回归模型？</h3><p>  先谈线性回归，是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。其表达形式为y = w’x+e，e为误差服从均值为0的正态分布。</p>
-<blockquote>
-<p>线性回归模型一般是对某一事物进行预测，例如预测房价、身高、GDP、学生成绩等，这些被预测的变量都属于连续型变量。</p>
+        <h2 id="什么是信用风险？"><a href="#什么是信用风险？" class="headerlink" title="什么是信用风险？"></a>什么是信用风险？</h2><hr>
+<p>交易对手未能履行约定契约中的义务而造成经济损失的风险,即受信人不能履行还本付息的责任而使授信人的预期收益与实际收益发生偏离的可能性它是金融风险的主要类型。</p>
+<h2 id="什么是评分卡？"><a href="#什么是评分卡？" class="headerlink" title="什么是评分卡？"></a>什么是评分卡？</h2><hr>
+<p> 信用评分模型运用数据挖掘技术和统计分析方法，通过对申请人的人口特征、信用历史记录、行为记录、交易记录等大量数据进行系统的分析，挖掘数据中蕴含的行为模式、信用特征，捕捉历史信息和未来信用表现之间的关系，发展出预测性的模型，以一个信用评分来综合评估消费者未来的某种信用表现。</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><blockquote>
+<ul>
+<li>以分数的形式来衡量风险几率的一种手段</li>
+<li>对未来一段时间内违约/逾期/失联概率的预测</li>
+<li>有一个明确的(正)区间</li>
+<li>通常分数越高越安全</li>
+<li>数据驱动（搜集数据，对数据研究，建立模型）</li>
+<li>客观性、准确性、效率性</li>
+</ul>
 </blockquote>
-<p>  但是有些情况下，被预测变量可能是二元变量</p>
-<blockquote>
-<p>即成功或失败、流失或不流失、涨或跌等，对于这类问题，线性回归将束手无策。</p>
+<h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><blockquote>
+<ul>
+<li>金融机构内部数据评分：</li>
+</ul>
+<p>反欺诈评分卡、申请评分卡(Application)、行为评分卡(Behavior)、催收评分卡(Collection)、行为收益评分、行为流失倾向评分、申请欺诈评分、交易欺诈评分</p>
+<ul>
+<li>征信局数据评分:</li>
+</ul>
+<p>征信局风险/破产/收益评分、市场反应评分、转账倾向评分、信用评分</p>
 </blockquote>
-<p>  这个时候就需要另一种回归方法进行预测，即Logistic回归。</p>
-<h3 id="二、逻辑回归的主要三大用途"><a href="#二、逻辑回归的主要三大用途" class="headerlink" title="二、逻辑回归的主要三大用途"></a>二、逻辑回归的主要三大用途</h3><ol>
-<li><p>寻找危险因素，找到某些影响因变量的”坏因素”，一般可以通过优势比发现危险因素；</p>
-</li>
-<li><p>用于预测，可以预测某种情况发生的概率或可能性大小；</p>
-</li>
-<li><p>用于判别，判断某个新样本所属的类别。</p>
-</li>
+<h3 id="常用的评分卡："><a href="#常用的评分卡：" class="headerlink" title="常用的评分卡："></a>常用的评分卡：</h3><ol>
+<li>反欺诈评分卡、申请评分卡是在贷前准入环节里面</li>
+<li>申请评分卡用到的大部分是申请者的背景变量，而且这个模型一般也会比较谨慎。</li>
+<li>行为评分卡表示申请者已经获准贷款，已经放出贷款以后，根据贷款人的消费习惯，还款情况等一些信用特征，就是跟踪客户合同开始后的表现，来预估用户逾期或者是违约概率。</li>
+<li>催收评分卡是对已经逾期或者违约的客户，对他进行一个催收评分，严格来讲，有三个模型，还款率模型，账龄滚动模型，失联模型。</li>
 </ol>
-<h3 id="三、与普通线性回归的关系"><a href="#三、与普通线性回归的关系" class="headerlink" title="三、与普通线性回归的关系"></a>三、与普通线性回归的关系</h3><ol>
-<li><p>Logistic回归模型的因变量为二分类变量；</p>
-</li>
-<li><p>该模型的因变量和自变量之间不存在线性关系；</p>
-</li>
-<li><p>一般线性回归模型中需要假设独立同分布、方差齐性等，而Logistic回归模型不需要；</p>
-</li>
-<li><p>Logistic回归没有关于自变量分布的假设条件，可以是连续变量、离散变量和虚拟变量；</p>
-</li>
-<li><p>由于因变量和自变量之间不存在线性关系，所以参数(偏回归系数)使用最大似然估计法计算。</p>
-</li>
-</ol>
-<h3 id="四、逻辑回归的数学解释"><a href="#四、逻辑回归的数学解释" class="headerlink" title="四、逻辑回归的数学解释"></a>四、逻辑回归的数学解释</h3><p>Logistic回归主要通过构造一个重要的指标：发生比来判定因变量的类别。在这里我们引入概率的概念，把事件发生定义为Y=1，事件未发生定义为Y=0，那么事件发生的概率为p,事件未发生的概率为1-p，把p看成x的线性函数；</p>
-<p>回归中，最常用的估计是最小二乘估计，因为使得p在[0,1]之间变换，最小二乘估计不太合适，有木有一种估计法能让p在趋近与0和1的时候变换缓慢一些（不敏感），这种变换是我们想要的，于是引入Logit变换,对p/(1-p)也就是发生与不发生的比值取对数，也称对数差异比。经过变换后，p对x就不是线性关系了。</p>
-<p>logistic回归的公式可以表示为：</p>
-<p><img src="http://oo6m6ar35.bkt.clouddn.com/CodeCogsEqn.gif" alt="img"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95" target="_blank" rel="external">最小二乘估计法</a></li>
-</ol>
+<h3 id="评分卡示例"><a href="#评分卡示例" class="headerlink" title="评分卡示例"></a>评分卡示例</h3><table>
+<thead>
+<tr>
+<th>variable变量</th>
+<th style="text-align:right">bin分箱</th>
+<th style="text-align:center">points分数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>age</td>
+<td style="text-align:right">&lt;=30</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>age</td>
+<td style="text-align:right">(30,35]</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">(35,40]</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">(40,45]</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">(45,50]</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="评分卡的表现期和观察期"><a href="#评分卡的表现期和观察期" class="headerlink" title="评分卡的表现期和观察期"></a>评分卡的表现期和观察期</h3><p>为了能够开发最合适的模型，需要准确的确定客户的风险释放规律，太短风险未充分释放，太长业务成本又太高。</p>
+<p>需要结合Vintage 分析、滚动率分析和风险释放分析。通过这些分析，可以确定模型所使用的好 坏客户定义、表现期和观察期。</p>
+<p>在确定了客户的好坏表现和观察期表现期后，需要针对已有放款数据的数据量、好客户 /坏客户数量制定抽样方案，提取并整合数据，并为数据打上好坏标签。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><hr>
+<p>[1]: 陈建. 信用评分模型技术与应用[M]. 中国财政经济出版社, 2005.</p>
 
       
     </div>
@@ -377,9 +399,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/统计学/" rel="tag">#统计学</a>
-          
-            <a href="/tags/R/" rel="tag">#R</a>
+            <a href="/tags/教程/" rel="tag">#教程</a>
           
         </div>
       
@@ -388,17 +408,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/07/2017/04MathJax/" rel="next" title="Markdown使用MathJax引擎插入数据公式">
-                <i class="fa fa-chevron-left"></i> Markdown使用MathJax引擎插入数据公式
+              <a href="/2017/07/02/2017/data-visualization/" rel="next" title="数据可视化感悟">
+                <i class="fa fa-chevron-left"></i> 数据可视化感悟
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/11/2017/04caretpackages/" rel="prev" title="caret包解读">
-                caret包解读 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,7 +541,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、为什么用逻辑回归模型？"><span class="nav-number">1.</span> <span class="nav-text">一、为什么用逻辑回归模型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、逻辑回归的主要三大用途"><span class="nav-number">2.</span> <span class="nav-text">二、逻辑回归的主要三大用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、与普通线性回归的关系"><span class="nav-number">3.</span> <span class="nav-text">三、与普通线性回归的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、逻辑回归的数学解释"><span class="nav-number">4.</span> <span class="nav-text">四、逻辑回归的数学解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是信用风险？"><span class="nav-number">1.</span> <span class="nav-text">什么是信用风险？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是评分卡？"><span class="nav-number">2.</span> <span class="nav-text">什么是评分卡？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">2.1.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类："><span class="nav-number">2.2.</span> <span class="nav-text">分类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的评分卡："><span class="nav-number">2.3.</span> <span class="nav-text">常用的评分卡：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评分卡示例"><span class="nav-number">2.4.</span> <span class="nav-text">评分卡示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评分卡的表现期和观察期"><span class="nav-number">2.5.</span> <span class="nav-text">评分卡的表现期和观察期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">3.</span> <span class="nav-text">引用</span></a></li></ol></div>
             
           </div>
         </section>
