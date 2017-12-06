@@ -256,6 +256,108 @@
             
               
                 
+                <a class="post-title-link" href="/2017/12/06/2017/python-isnull/" itemprop="url">
+                  python中缺失值的处理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-06T23:15:25+08:00" content="2017-12-06">
+              2017-12-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Python-缺失值处理-Pandas包"><a href="#Python-缺失值处理-Pandas包" class="headerlink" title="Python 缺失值处理-Pandas包"></a>Python 缺失值处理-Pandas包</h3><h4 id="drop-丢弃值"><a href="#drop-丢弃值" class="headerlink" title="drop()丢弃值"></a>drop()丢弃值</h4><ul>
+<li>一般用于丢弃DataFrame里的列columns，但切片功能效果相同，根据实际使用，好处是节约内存</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 按列（axis=1），丢弃指定label的列</span></div><div class="line">df.drop(labels, axis=<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h4 id="isnull-amp-notnull-判断空值"><a href="#isnull-amp-notnull-判断空值" class="headerlink" title="isnull() &amp; notnull() 判断空值"></a>isnull() &amp; notnull() 判断空值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df.isnull()</div><div class="line"></div><div class="line">s.isnull()</div><div class="line"></div><div class="line">s.isnull().value_counts()</div></pre></td></tr></table></figure>
+<h4 id="dropna-丢弃缺失值"><a href="#dropna-丢弃缺失值" class="headerlink" title="dropna() 丢弃缺失值"></a>dropna() 丢弃缺失值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 默认axi=0，how=‘any’，按行，任意一行有NaN就整列丢弃</span></div><div class="line">df.dropna()</div><div class="line">df.dropna(axis=<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 一行中全部为NaN的，才丢弃</span></div><div class="line">df.driopna(how=<span class="string">'all'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 保留至少3个非空值的行：一行中有3个值是非空的就保留</span></div><div class="line">df.dropna(thresh=<span class="number">3</span>)</div></pre></td></tr></table></figure>
+<h4 id="fillna-缺失值填充"><a href="#fillna-缺失值填充" class="headerlink" title="fillna() 缺失值填充"></a><strong>fillna() 缺失值填充</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.fillna(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h4 id="业务代码示例"><a href="#业务代码示例" class="headerlink" title="业务代码示例"></a>业务代码示例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data = data.dropna(thresh=len(data)*<span class="number">0.5</span>,axis = <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p>在data数据集中，删除缺失比例0.5以上的列</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/11/30/2017/VintageAnalysis/" itemprop="url">
                   Vintage分析
                 </a>
@@ -439,7 +541,7 @@
 <li>M3时段：是M2的延续，即在未还款的第四个账单日到第四次账单的最后缴款日之间。</li>
 <li>。。。</li>
 </ul>
-<p><strong>注意</strong> 以上定义为主流定义，有的机构没有MO，在法律合同文本中主要采用对账单日的说明来定义相关条款。</p>
+<p><strong>注意</strong> : 以上定义为主流定义，有的机构没有MO，在法律合同文本中主要采用对账单日的说明来定义相关条款。</p>
 <h3 id="贷款五级分类"><a href="#贷款五级分类" class="headerlink" title="贷款五级分类"></a>贷款五级分类</h3><hr>
 <p>1998年5月，中国人民银行参照国际惯例，结合中国国情，制定了《贷款分类指导原则》，要求商业银行依据借款人的实际还款能力进行贷款质量的五级分类，即按风险程度将贷款划分为五类：正常、关注、次级、可疑、损失，后三种为不良贷款。</p>
 <h4 id="正常贷款"><a href="#正常贷款" class="headerlink" title="正常贷款"></a>正常贷款</h4><p>借款人能够履行合同，一直能正常还本付息，不存在任何影响贷款本息及时全额偿还的消极因素，银行对借款人按时足额偿还贷款本息有充分把握。贷款损失的概率为0。[2]</p>
@@ -447,7 +549,7 @@
 <h4 id="次级贷款"><a href="#次级贷款" class="headerlink" title="次级贷款"></a>次级贷款</h4><p>借款人的还款能力出现明显问题，完全依靠其正常营业收入无法足额偿还贷款本息，需要通过处分资产或对外融资乃至执行抵押担保来还款付息。贷款损失的概率在30%-50%。[2]</p>
 <h4 id="可疑贷款"><a href="#可疑贷款" class="headerlink" title="可疑贷款"></a>可疑贷款</h4><p>借款人无法足额偿还贷款本息，即使执行抵押或担保，也肯定要造成一部分损失，只是因为存在借款人重组、兼并、合并、抵押物处理和未决诉讼等待定因素，损失金额的多少还不能确定，贷款损失的概率在50%-75%之间。</p>
 <h4 id="损失贷款"><a href="#损失贷款" class="headerlink" title="损失贷款"></a>损失贷款</h4><p>指借款人已无偿还本息的可能，无论采取什么措施和履行什么程序，贷款都注定要损失了，或者虽然能收回极少部分，但其价值也是微乎其微，从银行的角度看，也没有意义和必要再将其作为银行资产在账目上保留下来，对于这类贷款在履行了必要的法律程序之后应立即予以注销，其贷款损失的概率在75%-100%。</p>
-<p><strong>注意</strong> 五级分类的调整主要依据实际情况手工调整，较少根据系统计算逾期天数来调整。</p>
+<p><strong>注意</strong> : 五级分类的调整主要依据实际情况手工调整，较少根据系统计算逾期天数来调整。</p>
 <h2 id="什么是评分卡？"><a href="#什么是评分卡？" class="headerlink" title="什么是评分卡？"></a>什么是评分卡？</h2><hr>
 <p> 信用评分模型运用数据挖掘技术和统计分析方法，通过对申请人的人口特征、信用历史记录、行为记录、交易记录等大量数据进行系统的分析，挖掘数据中蕴含的行为模式、信用特征，捕捉历史信息和未来信用表现之间的关系，发展出预测性的模型，以一个信用评分来综合评估消费者未来的某种信用表现。</p>
 <h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><blockquote>
@@ -1370,121 +1472,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/08/2017/descriptive-statistics/" itemprop="url">
-                  《描述性统计学》笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-08T09:06:48+08:00" content="2017-02-08">
-              2017-02-08
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天开始学习<a href="https://cn.udacity.com/course/intro-to-descriptive-statistics--ud827" target="_blank" rel="external">描述性统计学入门</a>课程，随堂进行笔记记录。</p>
-<h3 id="1-什么是统计学？"><a href="#1-什么是统计学？" class="headerlink" title="1.什么是统计学？"></a>1.什么是统计学？</h3><p>统计学是数学的一个重要领域，用于分析、解释和预测数据的结果。描述统计学将让你学会描述数据的基本概念。这是为那些对数据科学、经济学、心理学、机器学习、体育分析学以及其它任何领域感兴趣的人开设的意义重大的入门课程。本课程提供中文版本。</p>
-<h3 id="2-什么是描述性统计？"><a href="#2-什么是描述性统计？" class="headerlink" title="2.什么是描述性统计？"></a>2.什么是描述性统计？</h3><p>描述性统计是指将调查样本中的包含的大量数据资料进行整理、概况和计算。是推断性统计的基础。</p>
-<h4 id="2-1-主要运用工具"><a href="#2-1-主要运用工具" class="headerlink" title="2.1 主要运用工具"></a>2.1 主要运用工具</h4><blockquote>
-<p>集中量数，如平均数、中位数、众数、几何平均数、调和平均数。</p>
-<p>变异量数，如全距、平均差、标准差、相对差、四分差。</p>
-</blockquote>
-<p>常见的描述性统计方法可分为三类：</p>
-<ul>
-<li>用数据的统计量来描述，如：均值、标准差等；</li>
-<li>用图示技术来描述，如：直方图、散布图、趋势图、排列图、条形图和饼分图等；</li>
-<li>用文字语言分析和描述，如：统计分析表、分层、因果图、<a href="http://wiki.mbalib.com/wiki/%E4%BA%B2%E5%92%8C%E5%9B%BE" target="_blank" rel="external">亲和图</a>和流程图等。</li>
-</ul>
-<h3 id="3-课程笔记"><a href="#3-课程笔记" class="headerlink" title="3.课程笔记"></a>3.课程笔记</h3><h4 id="3-1-lesson1-研究方法入门"><a href="#3-1-lesson1-研究方法入门" class="headerlink" title="3.1 lesson1 研究方法入门"></a>3.1 lesson1 研究方法入门</h4><h5 id="3-1-1提出的几个有趣的问题："><a href="#3-1-1提出的几个有趣的问题：" class="headerlink" title="3.1.1提出的几个有趣的问题："></a>3.1.1提出的几个有趣的问题：</h5><blockquote>
-<p>如何判断记忆的好坏？<br>如何判断幸福感的指数？</p>
-</blockquote>
-<h5 id="3-1-2-随机性"><a href="#3-1-2-随机性" class="headerlink" title="3.1.2 随机性"></a>3.1.2 随机性</h5><blockquote>
-<p>样本每一个因子被选中的概率是一样的</p>
-<h5 id="3-1-3-单盲测试和双盲测试"><a href="#3-1-3-单盲测试和双盲测试" class="headerlink" title="3.1.3 单盲测试和双盲测试"></a>3.1.3 <a href="https://zh.wikipedia.org/wiki/%E9%9B%99%E7%9B%B2" target="_blank" rel="external">单盲测试和双盲测试</a></h5></blockquote>
-<h4 id="3-2-lesson2-数据可视化"><a href="#3-2-lesson2-数据可视化" class="headerlink" title="3.2 lesson2 数据可视化"></a>3.2 lesson2 数据可视化</h4><p>频率，相对频率</p>
-<h4 id="3-3-lesson3-集中趋势"><a href="#3-3-lesson3-集中趋势" class="headerlink" title="3.3 lesson3 集中趋势"></a>3.3 lesson3 集中趋势</h4><p>众数(mode)，平均数（mean），中位数(median)</p>
-<h4 id="3-4-lesson4-可变性"><a href="#3-4-lesson4-可变性" class="headerlink" title="3.4 lesson4 可变性"></a>3.4 lesson4 可变性</h4><p>方差，标准差的应用</p>
-<h4 id="3-5-lesson5-归一化"><a href="#3-5-lesson5-归一化" class="headerlink" title="3.5 lesson5 归一化"></a>3.5 lesson5 归一化</h4>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1530,7 +1517,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
