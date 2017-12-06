@@ -257,7 +257,7 @@
               
                 
                 <a class="post-title-link" href="/2017/12/06/2017/python-isnull/" itemprop="url">
-                  python中缺失值的处理
+                  Python中缺失值的处理
                 </a>
               
             
@@ -300,14 +300,14 @@
       
         
           
-            <h3 id="Python-缺失值处理-Pandas包"><a href="#Python-缺失值处理-Pandas包" class="headerlink" title="Python 缺失值处理-Pandas包"></a>Python 缺失值处理-Pandas包</h3><h4 id="drop-丢弃值"><a href="#drop-丢弃值" class="headerlink" title="drop()丢弃值"></a>drop()丢弃值</h4><ul>
+            <h3 id="drop-丢弃值"><a href="#drop-丢弃值" class="headerlink" title="drop()丢弃值"></a>drop()丢弃值</h3><ul>
 <li>一般用于丢弃DataFrame里的列columns，但切片功能效果相同，根据实际使用，好处是节约内存</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 按列（axis=1），丢弃指定label的列</span></div><div class="line">df.drop(labels, axis=<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<h4 id="isnull-amp-notnull-判断空值"><a href="#isnull-amp-notnull-判断空值" class="headerlink" title="isnull() &amp; notnull() 判断空值"></a>isnull() &amp; notnull() 判断空值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df.isnull()</div><div class="line"></div><div class="line">s.isnull()</div><div class="line"></div><div class="line">s.isnull().value_counts()</div></pre></td></tr></table></figure>
-<h4 id="dropna-丢弃缺失值"><a href="#dropna-丢弃缺失值" class="headerlink" title="dropna() 丢弃缺失值"></a>dropna() 丢弃缺失值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 默认axi=0，how=‘any’，按行，任意一行有NaN就整列丢弃</span></div><div class="line">df.dropna()</div><div class="line">df.dropna(axis=<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 一行中全部为NaN的，才丢弃</span></div><div class="line">df.driopna(how=<span class="string">'all'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 保留至少3个非空值的行：一行中有3个值是非空的就保留</span></div><div class="line">df.dropna(thresh=<span class="number">3</span>)</div></pre></td></tr></table></figure>
-<h4 id="fillna-缺失值填充"><a href="#fillna-缺失值填充" class="headerlink" title="fillna() 缺失值填充"></a><strong>fillna() 缺失值填充</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.fillna(<span class="number">0</span>)</div></pre></td></tr></table></figure>
-<h4 id="业务代码示例"><a href="#业务代码示例" class="headerlink" title="业务代码示例"></a>业务代码示例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data = data.dropna(thresh=len(data)*<span class="number">0.5</span>,axis = <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="isnull-amp-notnull-判断空值"><a href="#isnull-amp-notnull-判断空值" class="headerlink" title="isnull() &amp; notnull() 判断空值"></a>isnull() &amp; notnull() 判断空值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df.isnull()</div><div class="line"></div><div class="line">s.isnull()</div><div class="line"></div><div class="line">s.isnull().value_counts()</div></pre></td></tr></table></figure>
+<h3 id="dropna-丢弃缺失值"><a href="#dropna-丢弃缺失值" class="headerlink" title="dropna() 丢弃缺失值"></a>dropna() 丢弃缺失值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 默认axi=0，how=‘any’，按行，任意一行有NaN就整列丢弃</span></div><div class="line">df.dropna()</div><div class="line">df.dropna(axis=<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 一行中全部为NaN的，才丢弃</span></div><div class="line">df.driopna(how=<span class="string">'all'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 保留至少3个非空值的行：一行中有3个值是非空的就保留</span></div><div class="line">df.dropna(thresh=<span class="number">3</span>)</div></pre></td></tr></table></figure>
+<h3 id="fillna-缺失值填充"><a href="#fillna-缺失值填充" class="headerlink" title="fillna() 缺失值填充"></a><strong>fillna() 缺失值填充</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.fillna(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h3 id="业务代码示例"><a href="#业务代码示例" class="headerlink" title="业务代码示例"></a>业务代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data = data.dropna(thresh=len(data)*<span class="number">0.5</span>,axis = <span class="number">1</span>)</div></pre></td></tr></table></figure>
 <p>在data数据集中，删除缺失比例0.5以上的列</p>
 
           
@@ -1527,7 +1527,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
