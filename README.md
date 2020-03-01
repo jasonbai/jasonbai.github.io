@@ -12,7 +12,7 @@
 
 * [基金记录](invest/fund.md) 
 * [股票记录](invest/stock.md )
-* 投资杂谈
+* [投资杂谈](/invest/investmentidea.md)
 
 ## 网络印记
 
