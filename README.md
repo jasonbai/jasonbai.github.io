@@ -17,3 +17,4 @@
 ## 网络印记
 
 * Twitter：@jasonbai
+* E-mail： thinkdat@gmail.com
