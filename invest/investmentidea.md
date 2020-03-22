@@ -18,6 +18,14 @@
 
 * 对冲之王：华尔街量化投资传奇
 
+### 技术文档：
+
+---
+
+[seaborn 0.9 中文文档](https://seaborn.apachecn.org/#/README?id=seaborn-09-中文文档)
+
+
+
 
 
 ### 学习日志
