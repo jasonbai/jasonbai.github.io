@@ -54,7 +54,7 @@ const PROJECTS = [
   },
   {
     title: "Bstocks",
-    description: "一个专为开发者设计的股票交量化投资看板。",
+    description: "一个专为开发者设计的股票量化投资看板。",
     link: "https://github.com/jasonbai/bstocks",
     icon: TrendingUp,
     category: "命令行工具"
