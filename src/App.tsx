@@ -32,11 +32,11 @@ const FOOTER_PAGE_LINKS = [
 
 const PROJECTS = [
   {
-    title: "Common-English-Words-for-Children",
-    description: "儿童常见英语单词列表，适合儿童学习英语。",
-    link: "https://github.com/jasonbai/Common-English-Words-for-Children",
+    title: "AI Menu",
+    description: "AI 驱动的多餐厅智能点菜 SaaS 平台",
+    link: "https://aimenu.vercel.app/",
     icon: BookOpen,
-    category: "语言学习"
+    category: "项目开发"
   },
   {
     title: "HowtoCook - SKill",
