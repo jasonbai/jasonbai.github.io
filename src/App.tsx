@@ -72,7 +72,7 @@ export default function App() {
         >
           <img
             src={siteLogo}
-            alt=""
+            alt="JasonBai 个人网站"
             width={36}
             height={36}
             className="h-9 w-9 rounded-full object-cover ring-1 ring-black/10 shrink-0"
@@ -110,9 +110,9 @@ export default function App() {
           {/* 参考极简落地页：说明文案 + 下方胶囊按钮 */}
           <div className="mt-14 md:mt-16 flex flex-col items-center gap-8 max-w-2xl mx-auto px-2">
             <div className="flex flex-col items-center gap-3 md:gap-4">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-black text-center leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-black text-center leading-tight">
                 Auto Risk Model Research
-              </h2>
+              </h1>
               <p className="text-base md:text-lg font-medium text-black/55 leading-relaxed text-center">
                 基于Claude Code的风控建模自动化调参工具
               </p>
@@ -198,7 +198,7 @@ export default function App() {
               <div className="flex items-center gap-2.5 text-xl font-bold tracking-tighter">
                 <img
                   src={siteLogo}
-                  alt=""
+                  alt="JasonBai 个人网站"
                   width={32}
                   height={32}
                   className="h-8 w-8 rounded-full object-cover ring-1 ring-black/10 shrink-0"
