@@ -10,11 +10,10 @@ import {
   Languages,
   TrendingUp,
 } from "lucide-react";
-import riskModelShowcase from "./img/riskmodle.jpg";
 import siteLogo from "./img/logo.png";
 
 /** Auto Risk 展示区块专用仓库链接（与页尾社交 GitHub 主页无关） */
-const AUTORISKMODEL_REPO_URL = "https://github.com/jasonbai/autoriskmodel";
+const ETFWIN_URL = "http://www.etfwin.com";
 
 const SOCIAL_LINKS = [
   { name: "GitHub", icon: Github, url: "https://github.com/jasonbai" },
@@ -53,9 +52,9 @@ const PROJECTS = [
     category: "语言学习"
   },
   {
-    title: "Bstocks",
-    description: "一个专为开发者设计的股票量化投资看板。",
-    link: "https://github.com/jasonbai/bstocks",
+    title: "AutoRiskModel",
+    description: "自动化风控建模项目。",
+    link: "https://github.com/jasonbai/autoriskmodel",
     icon: TrendingUp,
     category: "命令行工具"
   },
@@ -98,34 +97,47 @@ export default function App() {
           <div className="inline-block px-3 py-1 rounded-full bg-black/5 text-[8px] font-bold uppercase tracking-widest mb-6 md:mb-8">
             Available for new projects
           </div>
-          <img
-            src={riskModelShowcase}
-            alt="AutoResearch 智能风控建模系统展示"
-            width={1920}
-            height={908}
-            className="mx-auto block w-full max-w-5xl h-auto"
-            loading="eager"
-            decoding="async"
-          />
-          {/* 参考极简落地页：说明文案 + 下方胶囊按钮 */}
-          <div className="mt-14 md:mt-16 flex flex-col items-center gap-8 max-w-2xl mx-auto px-2">
-            <div className="flex flex-col items-center gap-3 md:gap-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-black text-center leading-tight">
-                Auto Risk Model Research
-              </h1>
-              <p className="text-base md:text-lg font-medium text-black/55 leading-relaxed text-center">
-                基于Claude Code的风控建模自动化调参工具
+          {/* Hero Text Banner */}
+          <div className="w-full max-w-5xl mx-auto bg-black/[0.03] rounded-2xl py-16 md:py-24 px-6 md:px-12">
+            <div className="flex flex-col items-center gap-6 md:gap-8">
+              <div className="flex flex-col items-center gap-3">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-black text-center leading-none">
+                  ETF 投研
+                </h1>
+                <p className="text-lg sm:text-xl md:text-2xl font-semibold text-black/70 text-center tracking-wide">
+                  全链路、智能化
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-2">
+                {["市场全景", "动量轮动", "技术分析", "AI 解读", "组合诊断"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-black/10 text-xs md:text-sm font-medium text-black/60"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <p className="text-sm md:text-base text-black/40 font-medium mt-1">
+                覆盖 ETF 研究决策全流程
               </p>
+              <div className="flex flex-col items-center gap-4 mt-4">
+                <div className="flex flex-col items-center gap-3 md:gap-4">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-black text-center leading-tight">
+                    ETFWin
+                  </h2>
+                </div>
+                <a
+                  href={ETFWIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="easlo-button-primary"
+                >
+                  <ArrowRight size={18} strokeWidth={2} />
+                  {ETFWIN_URL.replace(/^https?:\/\//, "")}
+                </a>
+              </div>
             </div>
-            <a
-              href={AUTORISKMODEL_REPO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="easlo-button-primary"
-            >
-              <Github size={18} strokeWidth={2} />
-              {AUTORISKMODEL_REPO_URL.replace(/^https:\/\//, "")}
-            </a>
           </div>
         </motion.div>
 
