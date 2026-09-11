@@ -1,6 +1,9 @@
-import { motion } from "motion/react";
+import { MotionConfig, motion } from "motion/react";
+import { useState } from "react";
 import {
-  ArrowRight,
+  ArrowUpRight,
+  Plus,
+  Minus,
   BookOpen,
   Camera,
   ChefHat,
@@ -17,16 +20,12 @@ const ETFWIN_URL = "http://www.etfwin.com";
 const SOCIAL_LINKS = [
   { name: "GitHub", icon: Github, url: "https://github.com/jasonbai" },
   { name: "小红书", icon: Camera, url: "https://xhslink.com/m/22pjLIX7FW0" },
-  { name: "知识星球", icon: Orbit, url: "https://wx.zsxq.com/group/48885444521218" },
+  {
+    name: "知识星球",
+    icon: Orbit,
+    url: "https://wx.zsxq.com/group/48885444521218",
+  },
   { name: "Email", icon: Mail, url: "mailto:170236806@qq.com" },
-];
-
-const FOOTER_PAGE_LINKS = [
-  { label: "主题", href: "#themes" },
-  { label: "项目", href: "#projects" },
-  { label: "关于", href: "#about" },
-  { label: "时间线", href: "#timeline" },
-  { label: "联系", href: "#contact" },
 ];
 
 const PROJECTS = [
@@ -37,7 +36,8 @@ const PROJECTS = [
     icon: BookOpen,
     category: "项目开发",
     why: "餐厅菜单不是简单的信息展示，它牵涉菜品理解、用户偏好、多人协作和下单效率。",
-    status: "正在把 AI 推荐、菜单结构化和多餐厅 SaaS 流程整合到一个可用产品里。",
+    status:
+      "正在把 AI 推荐、菜单结构化和多餐厅 SaaS 流程整合到一个可用产品里。",
     next: "继续强化商家侧配置、用户侧推荐解释，以及更稳定的点单决策链路。",
   },
   {
@@ -47,7 +47,8 @@ const PROJECTS = [
     icon: ChefHat,
     category: "居家生活",
     why: "做饭是一个典型的高频生活问题：约束很多，但很多经验可以被结构化和复用。",
-    status: "把家常菜流程、食材替换和步骤拆解沉淀成可调用的 Claude Code Skill。",
+    status:
+      "把家常菜流程、食材替换和步骤拆解沉淀成可调用的 Claude Code Skill。",
     next: "让它更懂家庭厨房的真实限制，比如时间、库存、口味和失败兜底方案。",
   },
   {
@@ -72,7 +73,13 @@ const PROJECTS = [
   },
 ];
 
-const ETF_FEATURES = ["市场全景", "动量轮动", "技术分析", "AI 解读", "组合诊断"];
+const ETF_FEATURES = [
+  "市场全景",
+  "动量轮动",
+  "技术分析",
+  "AI 解读",
+  "组合诊断",
+];
 
 const BUILD_THEMES = [
   {
@@ -123,323 +130,379 @@ const TIMELINE = [
   },
 ];
 
+const reveal = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.12 },
+  transition: { duration: 0.65 },
+};
+
 export default function App() {
+  const [openProject, setOpenProject] = useState<number | null>(null);
   return (
-    <div className="min-h-screen bg-paper text-ink">
-      <header className="site-shell">
-        <nav className="border-b border-ink/15 py-5">
-          <div className="flex items-center justify-between gap-6">
-            <a href="/" className="inline-flex items-center gap-3" aria-label="JasonBai 首页">
-              <img
-                src={siteLogo}
-                alt=""
-                width={38}
-                height={38}
-                className="h-9 w-9 rounded-full object-cover grayscale"
-                decoding="async"
-              />
-              <span className="font-serif text-2xl font-semibold tracking-tight">JasonBai</span>
-            </a>
-            <div className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.18em] text-ink/55 sm:flex">
-              <a href="#themes" className="hover:text-ink">Themes</a>
-              <a href="#projects" className="hover:text-ink">Projects</a>
-              <a href="#about" className="hover:text-ink">Notes</a>
-              <a href="#contact" className="hover:text-ink">Contact</a>
-            </div>
-          </div>
+    <MotionConfig reducedMotion="user">
+      <a className="skip-link" href="#main">
+        跳转到正文
+      </a>
+      <header className="site-shell header">
+        <a href="#" className="brand" aria-label="尾灯白 首页">
+          <img src={siteLogo} alt="" width="32" height="32" />
+          尾灯白<span className="brand-dot">®</span>
+        </a>
+        <nav aria-label="主导航">
+          <a href="#projects">
+            作品 <span>01</span>
+          </a>
+          <a href="#about">
+            关于 <span>02</span>
+          </a>
+          <a href="#contact" className="nav-contact">
+            聊一聊 <ArrowUpRight size={15} />
+          </a>
         </nav>
       </header>
-
-      <main className="site-shell">
-        <motion.section
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-          className="grid grid-cols-1 content-between gap-14 py-10 md:min-h-[780px] md:grid-cols-[minmax(0,1fr)_260px] md:py-14"
-        >
-          <div className="flex flex-col justify-center">
-            <p className="kicker">Personal Website / 2026</p>
-            <h1 className="mt-8 max-w-4xl font-serif text-[clamp(3.6rem,11vw,9.5rem)] font-semibold leading-[0.86] tracking-tight">
+      <main id="main">
+        <section className="site-shell hero">
+          <motion.div
+            className="hero-copy"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="eyebrow">
+              <span className="status-dot" /> INDEPENDENT BUILDER · 持续构建中
+            </p>
+            <h1>
               Vibe in,
               <br />
-              value out.
+              <span>value out.</span>
+              <i>↗</i>
             </h1>
-            <p className="mt-9 max-w-2xl text-lg leading-8 text-ink/68 md:text-xl md:leading-9">
-              让灵感有去处，让价值有形状。那些闪现的直觉、走过的弯路与反复确认的判断，最终会沉淀成工具、系统和作品。
+            <p className="hero-subtitle">
+              你好，我是尾灯白。一个爱折腾的投资者。
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a href={ETFWIN_URL} target="_blank" rel="noopener noreferrer" className="button-dark">
-                ETFWin <ArrowRight size={16} strokeWidth={1.9} />
-              </a>
-              <a href="#themes" className="button-light">
-                查看我在构建什么
-              </a>
+            <p className="hero-description">
+              我平时研究 A 股和 ETF，也喜欢用 AI 写代码、做工具。
+              <br className="desktop-break" />
+              这里记录我做过的项目，以及在投资、学习和生活中的一些尝试。
+            </p>
+            <a href="#projects" className="button-primary">
+              探索我的作品 <ArrowUpRight size={19} />
+            </a>
+          </motion.div>
+          <div className="orbit-scene" aria-hidden="true">
+            <div className="orbit-grid" />
+            <div className="orbit-glow" />
+            <div className="orbital orbital-one" />
+            <div className="orbital orbital-two" />
+            <div className="orbital orbital-three" />
+            <div className="core">
+              <span>V</span>
+            </div>
+            <span className="orbit-label label-ai">✳ AI WORKFLOWS</span>
+            <span className="orbit-label label-finance">
+              ↗ FINANCIAL RESEARCH
+            </span>
+            <span className="orbit-label label-systems">
+              ⌘ PERSONAL SYSTEMS
+            </span>
+            <div className="coordinate">
+              IDEAS → SYSTEMS → VALUE
+              <br />
+              EXPERIMENT / BUILD / REPEAT
             </div>
           </div>
-
-          <aside className="hero-aside">
+          <div className="hero-bottom">
+            <span>AI · 金融投研 · 个人系统</span>
+            <a href="#projects">
+              SCROLL TO EXPLORE <span>↓</span>
+            </a>
+            <span>PERSONAL LAB / 2026</span>
+          </div>
+        </section>
+        <div className="ticker" aria-hidden="true">
+          <div>
+            {[0, 1, 2, 3].map((n) => (
+              <span key={n}>
+                IDEAS INTO SYSTEMS <b>✳</b> BUILD WITH INTENTION <b>✳</b> VIBE
+                IN, VALUE OUT <b>✳</b>{" "}
+              </span>
+            ))}
+          </div>
+        </div>
+        <section id="projects" className="site-shell section">
+          <motion.div {...reveal} className="section-heading">
             <div>
-              <p className="kicker">Now</p>
-              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight">ETF 投研</h2>
-              <p className="mt-4 text-sm leading-7 text-ink/62">
-                ETFWin 是我最近打磨最多的作品：在价格、风格与情绪之间，寻找更清晰的秩序，也留下可以回看的判断。
-              </p>
+              <p className="eyebrow">01 / SELECTED WORK</p>
+              <h2>
+                想法，正在发生<span>.</span>
+              </h2>
             </div>
-            <div className="border-t border-ink/15 pt-5">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink/45">
-                Focus
+            <p>
+              从一个问题出发，
+              <br />
+              做一些真正用得上的东西。
+            </p>
+          </motion.div>
+          <motion.a
+            {...reveal}
+            href={ETFWIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="featured-project"
+          >
+            <div className="featured-copy">
+              <p className="eyebrow">
+                <span className="status-dot" /> 当前专注 / FEATURED PROJECT
               </p>
-              <div className="flex flex-wrap gap-2">
-                {ETF_FEATURES.map((tag) => (
-                  <span key={tag} className="tag">
-                    {tag}
-                  </span>
+              <h3>
+                ETFWin<span>↗</span>
+              </h3>
+              <h4>在市场噪声中，寻找秩序。</h4>
+              <p>
+                把市场全景、动量轮动、技术分析、AI
+                解读和组合诊断放进同一条工作流，留下可以回看的判断。
+              </p>
+              <div className="tags">
+                {ETF_FEATURES.map((x) => (
+                  <span key={x}>{x}</span>
                 ))}
               </div>
+              <span className="text-link">
+                探索 ETF 投研工作台 <ArrowUpRight size={18} />
+              </span>
             </div>
-          </aside>
-        </motion.section>
-
-        <section id="themes" className="section-grid border-t border-ink/15 py-14 md:py-20">
-          <div>
-            <p className="kicker">What I Build</p>
-            <h2 className="mt-5 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
-              我在构建什么
-            </h2>
-          </div>
-          <div className="theme-grid">
-            {BUILD_THEMES.map((theme, index) => (
+            <div className="market-art" aria-hidden="true">
+              <div className="market-top">
+                <span>ETFWin / RESEARCH WORKSPACE</span>
+                <span className="chart-badge">概念示意</span>
+              </div>
+              <div className="market-title">
+                Find your edge.<small>把观察，变成可追踪的判断。</small>
+              </div>
+              <svg viewBox="0 0 520 210" fill="none">
+                <defs>
+                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop stopColor="#f9ac79" stopOpacity=".3" />
+                    <stop offset="1" stopColor="#f9ac79" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0 175 L30 166 L58 184 L86 135 L115 143 L142 115 L171 130 L200 83 L229 101 L258 87 L288 107 L317 64 L346 78 L375 41 L404 59 L433 29 L464 39 L495 12 L520 22 V210 H0Z"
+                  fill="url(#chartFill)"
+                />
+                <path
+                  className="chart-line"
+                  d="M0 175 L30 166 L58 184 L86 135 L115 143 L142 115 L171 130 L200 83 L229 101 L258 87 L288 107 L317 64 L346 78 L375 41 L404 59 L433 29 L464 39 L495 12 L520 22"
+                  stroke="#f9ac79"
+                  strokeWidth="2.5"
+                />
+                <path
+                  d="M0 188 Q130 180 260 140 T520 86"
+                  stroke="#7d736c"
+                  strokeDasharray="5 5"
+                />
+              </svg>
+              <div className="market-bottom">
+                <span>
+                  <i /> RESEARCH
+                </span>
+                <span>ANALYZE</span>
+                <span>REFLECT ↗</span>
+              </div>
+            </div>
+          </motion.a>
+          <div className="project-list">
+            {PROJECTS.map((project, index) => (
               <motion.article
-                key={theme.title}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.42, delay: index * 0.05 }}
-                className="theme-card"
+                {...reveal}
+                key={project.title}
+                className={`project-item ${openProject === index ? "is-open" : ""}`}
               >
-                <span className="theme-number">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="mt-5 text-2xl font-semibold tracking-tight">{theme.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-ink/62">{theme.body}</p>
+                <div className="project-summary">
+                  <span className="project-number">0{index + 2}</span>
+                  <div className="project-symbol">
+                    <project.icon size={23} />
+                  </div>
+                  <div className="project-title">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h3>
+                        {project.title}
+                        <ArrowUpRight size={20} />
+                      </h3>
+                    </a>
+                    <p>{project.description}</p>
+                  </div>
+                  <span className="project-category">{project.category}</span>
+                  <button
+                    className="expand-button"
+                    aria-label={`${openProject === index ? "收起" : "展开"} ${project.title} 详情`}
+                    aria-expanded={openProject === index}
+                    aria-controls={`project-${index}`}
+                    onClick={() =>
+                      setOpenProject(openProject === index ? null : index)
+                    }
+                  >
+                    {openProject === index ? (
+                      <Minus size={19} />
+                    ) : (
+                      <Plus size={19} />
+                    )}
+                  </button>
+                </div>
+                <div
+                  id={`project-${index}`}
+                  hidden={openProject !== index}
+                  className="project-details"
+                >
+                  <dl>
+                    {[
+                      ["WHY", project.why],
+                      ["NOW", project.status],
+                      ["NEXT", project.next],
+                    ].map(([label, body]) => (
+                      <div key={label}>
+                        <dt>{label}</dt>
+                        <dd>{body}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link"
+                  >
+                    访问项目 <ArrowUpRight size={16} />
+                  </a>
+                </div>
               </motion.article>
             ))}
           </div>
         </section>
-
-        <section id="projects" className="section-grid border-t border-ink/15 py-14 md:py-20">
-          <div>
-            <p className="kicker">Selected Work</p>
-            <h2 className="mt-5 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
-              精选项目
-            </h2>
-          </div>
-          <div className="project-index">
-            {PROJECTS.map((project, index) => (
-              <motion.a
-                key={project.title}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="project-row group"
-              >
-                <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
-                      {project.title}
-                    </h3>
-                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                      {project.category}
-                    </span>
-                  </div>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-ink/60">
-                    {project.description}
-                  </p>
-                  <dl className="project-notes">
-                    <div>
-                      <dt>Why</dt>
-                      <dd>{project.why}</dd>
-                    </div>
-                    <div>
-                      <dt>Status</dt>
-                      <dd>{project.status}</dd>
-                    </div>
-                    <div>
-                      <dt>Next</dt>
-                      <dd>{project.next}</dd>
-                    </div>
-                  </dl>
-                </div>
-                <div className="project-icon" aria-hidden>
-                  <project.icon size={20} strokeWidth={1.8} />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </section>
-
-        <section id="about" className="section-grid border-t border-ink/15 py-14 md:py-20">
-          <div>
-            <p className="kicker">About</p>
-            <h2 className="mt-5 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
-              持续构建
-            </h2>
-          </div>
-          <div className="space-y-7 text-lg leading-9 text-ink/70">
-            <p>
-              我长期关注 AI 工具、自动化系统、金融投研和学习型产品。这些方向并不完全相同，但都指向同一类工作：把高频、复杂或容易流失的经验，整理成更稳定、更容易复用的流程。
-            </p>
-            <ul className="question-list">
-              {LONG_TERM_QUESTIONS.map((question) => (
-                <li key={question}>{question}</li>
+        <section id="themes" className="themes-section">
+          <div className="site-shell section">
+            <motion.div {...reveal} className="section-heading">
+              <div>
+                <p className="eyebrow">THE EXPLORATION SPACE</p>
+                <h2>
+                  不同方向，同一种好奇心<span>.</span>
+                </h2>
+              </div>
+              <span className="asterisk" aria-hidden="true">
+                ✳
+              </span>
+            </motion.div>
+            <div className="theme-grid">
+              {BUILD_THEMES.map((theme, i) => (
+                <motion.article
+                  {...reveal}
+                  key={theme.title}
+                  className="theme-card"
+                >
+                  <span className="eyebrow">
+                    0{i + 1} /{" "}
+                    {["WORKFLOW", "RESEARCH", "LEARNING", "EVERYDAY"][i]}
+                  </span>
+                  <h3>{theme.title}</h3>
+                  <p>{theme.body}</p>
+                  <ArrowUpRight size={22} aria-hidden="true" />
+                </motion.article>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
-
-        <section id="timeline" className="section-grid border-t border-ink/15 py-14 md:py-20">
-          <div>
-            <p className="kicker">Accumulation</p>
-            <h2 className="mt-5 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
-              长期积累
+        <section id="about" className="site-shell section about-section">
+          <motion.div {...reveal}>
+            <p className="eyebrow">02 / THE BUILDER</p>
+            <h2>
+              持续构建，
+              <br />
+              也持续<span className="serif-word">提问。</span>
             </h2>
-          </div>
-          <div className="timeline-list">
+            <div className="about-signature">
+              <img src={siteLogo} alt="尾灯白 的头像" width="44" height="44" />
+              <div>
+                尾灯白<small>Builder / Explorer / Lifelong learner</small>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div {...reveal} className="about-body">
+            <p>
+              我长期关注 AI
+              工具、自动化系统、金融投研和学习型产品。这些方向并不完全相同，但都指向同一类工作：把高频、复杂或容易流失的经验，整理成更稳定、更容易复用的流程。
+            </p>
+            <div className="questions">
+              {LONG_TERM_QUESTIONS.map((q, i) => (
+                <p key={q}>
+                  <span>0{i + 1}</span>
+                  {q}
+                </p>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+        <section id="timeline" className="site-shell timeline-section">
+          <p className="eyebrow">A WORK IN PROGRESS / 长期积累</p>
+          <div className="timeline">
             {TIMELINE.map((item) => (
-              <article key={`${item.year}-${item.title}`} className="timeline-item">
+              <motion.article {...reveal} key={item.year}>
+                <span className="timeline-dot" />
                 <span className="timeline-year">{item.year}</span>
-                <div>
-                  <h3 className="text-2xl font-semibold tracking-tight">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-ink/62">{item.body}</p>
-                </div>
-              </article>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </motion.article>
             ))}
           </div>
         </section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="quiet-contact"
-        >
-          <div>
-            <p className="kicker">Stay Connected</p>
-            <h2 className="mt-5 font-serif text-4xl font-semibold tracking-tight md:text-5xl">
-              保持连接
-            </h2>
-          </div>
-          <div className="quiet-contact-body">
-            <p>
-              如果你也在构建自己的工具、工作流或长期系统，欢迎交流。我通常关注 AI、投研、学习工具和个人自动化这些方向。
+        <section id="contact" className="site-shell contact-section">
+          <motion.div {...reveal}>
+            <p className="eyebrow">
+              <span className="status-dot" /> 03 / STAY CONNECTED
             </p>
-            <div className="quiet-contact-links">
+            <h2>
+              下一个想法，
+              <br />
+              从一次对话开始<span>↗</span>
+            </h2>
+            <p>如果你也在构建自己的工具、工作流或长期系统，欢迎交流。</p>
+            <div className="social-links">
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="quiet-contact-link"
                 >
-                  <social.icon size={15} strokeWidth={1.8} aria-hidden />
+                  <social.icon size={18} />
                   {social.name}
+                  <ArrowUpRight size={16} />
                 </a>
               ))}
             </div>
-          </div>
-        </motion.section>
+          </motion.div>
+        </section>
       </main>
-
-      <footer id="contact" className="site-shell border-t border-ink/15 py-10">
-        <div className="grid gap-10 md:grid-cols-[1fr_2fr]">
-          <div>
-            <div className="flex items-center gap-3">
-              <img
-                src={siteLogo}
-                alt=""
-                width={34}
-                height={34}
-                className="h-8 w-8 rounded-full object-cover grayscale"
-                decoding="async"
-              />
-              <span className="font-serif text-2xl font-semibold tracking-tight">JasonBai</span>
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-7 text-ink/56">Vibe in, value out</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 text-sm sm:grid-cols-3">
-            <FooterColumn title="页面" items={FOOTER_PAGE_LINKS} />
-            <FooterColumn
-              title="项目"
-              items={PROJECTS.map((project) => ({ label: project.title, href: project.link }))}
-              external
-            />
-            <div>
-              <h3 className="footer-title">社交</h3>
-              <ul className="mt-4 space-y-3">
-                {SOCIAL_LINKS.map((social) => (
-                  <li key={social.name}>
-                    <a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-ink/55 transition-colors hover:text-ink"
-                    >
-                      <social.icon size={14} strokeWidth={1.8} aria-hidden />
-                      {social.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="mt-12 text-center text-xs text-ink/45">
-          <a
-            href="https://beian.miit.gov.cn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-ink"
-          >
-            © 2026 晋ICP备2024041192号-2
-          </a>
-        </div>
+      <footer className="site-shell footer">
+        <a className="brand" href="#">
+          尾灯白<span className="brand-dot">®</span>
+        </a>
+        <span>VIBE IN, VALUE OUT.</span>
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          © 2026 晋ICP备2024041192号-2
+        </a>
+        <a href="#" aria-label="回到顶部">
+          ↑ BACK TO TOP
+        </a>
       </footer>
-    </div>
-  );
-}
-
-function FooterColumn({
-  title,
-  items,
-  external = false,
-}: {
-  title: string;
-  items: Array<{ label: string; href: string }>;
-  external?: boolean;
-}) {
-  return (
-    <div>
-      <h3 className="footer-title">{title}</h3>
-      <ul className="mt-4 space-y-3">
-        {items.map((item) => (
-          <li key={item.href}>
-            <a
-              href={item.href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className="text-ink/55 transition-colors hover:text-ink"
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </MotionConfig>
   );
 }
