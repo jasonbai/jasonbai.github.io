@@ -311,8 +311,8 @@ export default function App() {
               <svg viewBox="0 0 520 210" fill="none">
                 <defs>
                   <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop stopColor="#f9ac79" stopOpacity=".3" />
-                    <stop offset="1" stopColor="#f9ac79" stopOpacity="0" />
+                    <stop stopColor="var(--brand-red)" stopOpacity=".3" />
+                    <stop offset="1" stopColor="var(--brand-red)" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path
@@ -322,12 +322,12 @@ export default function App() {
                 <path
                   className="chart-line"
                   d="M0 175 L30 166 L58 184 L86 135 L115 143 L142 115 L171 130 L200 83 L229 101 L258 87 L288 107 L317 64 L346 78 L375 41 L404 59 L433 29 L464 39 L495 12 L520 22"
-                  stroke="#f9ac79"
+                  stroke="var(--brand-red)"
                   strokeWidth="2.5"
                 />
                 <path
                   d="M0 188 Q130 180 260 140 T520 86"
-                  stroke="#7d736c"
+                  stroke="#64748b"
                   strokeDasharray="5 5"
                 />
               </svg>
