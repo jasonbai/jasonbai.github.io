@@ -8,6 +8,7 @@ import {
   Camera,
   ChefHat,
   Github,
+  Keyboard,
   Languages,
   Mail,
   Orbit,
@@ -29,6 +30,17 @@ const SOCIAL_LINKS = [
 ];
 
 const PROJECTS = [
+  {
+    title: "Kids-type",
+    description: "用 Vibe Coding 给女儿做的英语打字练习网站，练指法，也记单词。",
+    link: "https://kids-type.pages.dev/",
+    icon: Keyboard,
+    category: "儿童英语学习",
+    why: "女儿在学校用的打字软件，让我想起了小时候的电脑课。我想让她练习真正的键盘指法，也让敲出来的内容有学习价值，于是把打字练习和她正在学的 KET / PET 英语词汇结合起来。",
+    status:
+      "内置 KET 1500 词和 PET 2000 词，按 CEFR 等级与词频整理。练习时提供手指提示和即时对错反馈，完成单词后结合发音、释义及 AI 生成的儿童入门例句巩固记忆。无需注册，进度保存在浏览器本地，打开就能练。",
+    next: "项目已开源，采用纯前端静态站设计。希望这份给女儿的小工具也能帮助更多孩子，欢迎自行部署，或 Fork 后改成适合自己孩子的版本。",
+  },
   {
     title: "AI Menu",
     description: "AI 驱动的多餐厅智能点菜 SaaS 平台。",
