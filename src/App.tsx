@@ -1,5 +1,5 @@
 import { MotionConfig, motion } from "motion/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowUpRight,
   Plus,
@@ -13,8 +13,11 @@ import {
   Mail,
   Orbit,
   TrendingUp,
+  QrCode,
+  X,
 } from "lucide-react";
 import siteLogo from "./img/logo.png";
+import wechatQrCode from "./img/wechat-qrcode.jpg";
 
 const ETFWIN_URL = "http://www.etfwin.com";
 
@@ -151,6 +154,19 @@ const reveal = {
 
 export default function App() {
   const [openProject, setOpenProject] = useState<number | null>(null);
+  const wechatDialog = useRef<HTMLDialogElement>(null);
+  const wechatButton = (
+    <button
+      type="button"
+      aria-haspopup="dialog"
+      aria-controls="wechat-dialog"
+      onClick={() => wechatDialog.current?.showModal()}
+    >
+      <QrCode size={18} aria-hidden="true" />
+      微信公众号
+      <Plus size={16} aria-hidden="true" />
+    </button>
+  );
   return (
     <MotionConfig reducedMotion="user">
       <a className="skip-link" href="#main">
@@ -456,6 +472,7 @@ export default function App() {
                 </p>
               ))}
             </div>
+            <div className="social-links">{wechatButton}</div>
           </motion.div>
         </section>
         <section id="timeline" className="site-shell timeline-section">
@@ -483,6 +500,7 @@ export default function App() {
             </h2>
             <p>如果你也在构建自己的工具、工作流或长期系统，欢迎交流。</p>
             <div className="social-links">
+              {wechatButton}
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.name}
@@ -499,6 +517,39 @@ export default function App() {
           </motion.div>
         </section>
       </main>
+      <dialog
+        ref={wechatDialog}
+        id="wechat-dialog"
+        className="wechat-dialog"
+        aria-labelledby="wechat-dialog-title"
+        aria-describedby="wechat-dialog-description"
+        onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            const bounds = event.currentTarget.getBoundingClientRect();
+            if (
+              event.clientX < bounds.left || event.clientX > bounds.right ||
+              event.clientY < bounds.top || event.clientY > bounds.bottom
+            ) wechatDialog.current?.close();
+          }
+        }}
+      >
+        <button
+          type="button"
+          className="wechat-dialog-close"
+          aria-label="关闭二维码"
+          onClick={() => wechatDialog.current?.close()}
+          autoFocus
+        >
+          <X size={20} aria-hidden="true" />
+        </button>
+        <p className="eyebrow">STAY CONNECTED / 微信公众号</p>
+        <h2 id="wechat-dialog-title">微信扫码，保持联系。</h2>
+        <img src={wechatQrCode} alt="尾灯白的微信公众号二维码" width="258" height="258" />
+        <p id="wechat-dialog-description">
+          使用微信扫一扫，关注我的公众号。<br />
+          手机浏览时，可保存图片后在微信中识别。
+        </p>
+      </dialog>
       <footer className="site-shell footer">
         <a className="brand" href="#">
           尾灯白<span className="brand-dot">®</span>
