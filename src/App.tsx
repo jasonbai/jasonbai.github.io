@@ -185,7 +185,7 @@ export default function App() {
             关于 <span>02</span>
           </a>
           <a href="#contact" className="nav-contact">
-            聊一聊 <ArrowUpRight size={15} />
+            找到我 <ArrowUpRight size={15} />
           </a>
         </nav>
       </header>
@@ -207,7 +207,7 @@ export default function App() {
               <i>↗</i>
             </h1>
             <p className="hero-subtitle">
-              你好，我是尾灯白。一个爱折腾的投资者。
+              你好，我是尾灯白。一个爱折腾的手艺人
             </p>
             <p className="hero-description">
               我平时研究 A 股和 ETF，也喜欢用 AI 写代码、做工具。
