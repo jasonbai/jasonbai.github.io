@@ -327,6 +327,9 @@ a:focus-visible {
   letter-spacing: 1px;
 }
 .ticker {
+  /* Keep the rotated edges above the adjacent section backgrounds. */
+  position: relative;
+  z-index: 1;
   background: var(--brand-gradient);
   color: #0f172a;
   overflow: hidden;
